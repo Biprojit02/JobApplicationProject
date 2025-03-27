@@ -45,4 +45,13 @@ public class Company {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public List<Job> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(List<Job> jobs) {
+        this.jobs = jobs;
+    }
+
 }

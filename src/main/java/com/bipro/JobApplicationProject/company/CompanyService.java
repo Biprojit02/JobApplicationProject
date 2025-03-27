@@ -4,6 +4,7 @@ import java.util.List;
 
 public interface CompanyService {
     List<Company> getALlCompanies();
-    String getCompanyById(Long id);
-    String createCompany(Company company);
+    boolean updateCompany(Company company, Long id);
+    void createCompany(Company company);
+//    String getCompanyById(Long id);
 }
