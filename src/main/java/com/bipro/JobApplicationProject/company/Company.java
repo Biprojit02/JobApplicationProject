@@ -1,9 +1,11 @@
 package com.bipro.JobApplicationProject.company;
 
 import com.bipro.JobApplicationProject.job.Job;
+import com.bipro.JobApplicationProject.review.Review;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
 import java.util.List;
+
 @Entity
 public class Company {
     @Id
@@ -12,12 +14,15 @@ public class Company {
     private String name;
     private String description;
 
-    @OneToMany
+    @JsonIgnore
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Job> jobs;
+    //cascade = CascadeType.ALL → Deletes all associated jobs when a company is deleted.
+    //orphanRemoval = true → Ensures jobs with no company reference are removed.
 
-
-    // Video 4:33:44
-    // private List<Review> reviews;
+    @JsonIgnore
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
 
     public Company() {
     }

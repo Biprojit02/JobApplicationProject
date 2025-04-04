@@ -6,5 +6,6 @@ public interface CompanyService {
     List<Company> getALlCompanies();
     boolean updateCompany(Company company, Long id);
     void createCompany(Company company);
-//    String getCompanyById(Long id);
+    boolean deleteCompanyById(Long id);
+    Company getCompanyById(Long id);
 }
