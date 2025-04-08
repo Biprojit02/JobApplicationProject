@@ -20,7 +20,7 @@ public class Company {
     //cascade = CascadeType.ALL → Deletes all associated jobs when a company is deleted.
     //orphanRemoval = true → Ensures jobs with no company reference are removed.
 
-    @JsonIgnore
+//    @JsonIgnore
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> reviews;
 
@@ -59,4 +59,11 @@ public class Company {
         this.jobs = jobs;
     }
 
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 }

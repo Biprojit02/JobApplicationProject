@@ -58,4 +58,12 @@ public class Review {
     public void setRating(double rating) {
         this.rating = rating;
     }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 }
